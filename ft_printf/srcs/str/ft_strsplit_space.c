@@ -6,7 +6,7 @@
 /*   By: atourner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 09:30:36 by atourner          #+#    #+#             */
-/*   Updated: 2018/04/02 19:14:44 by atourner         ###   ########.fr       */
+/*   Updated: 2018/01/20 18:32:22 by atourner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,12 @@ static char		*ft_sub(char const *s, int start)
 	len = 0;
 	while (s[start + len] && !is_space(s[start + len]))
 		len++;
-	if (!(new = (char*)malloc(sizeof(char) * (len + 1))))
+	if (!(new = (char*)malloc(sizeof(char) * len)))
 		return (NULL);
 	new[len] = '\0';
-	len = 0;
-	while (s[start + len] && !is_space(s[start + len]))
+	while (len--)
 	{
 		new[len] = s[start + len];
-		len++;
 	}
 	return (new);
 }

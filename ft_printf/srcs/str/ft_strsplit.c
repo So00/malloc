@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "ft_printf.h"
 
 static int		ft_count_word(char const *s, char c)
 {
@@ -37,19 +36,16 @@ static char		*ft_sub(char const *s, int start, int c)
 {
 	int		len;
 	char	*new;
-	int		i;
 
-	i = 0;
 	len = 0;
 	while (s[start + len] && s[start + len] != c)
 		len++;
-	if (!(new = ft_strnew(len)))
+	if (!(new = (char*)malloc(sizeof(char) * len)))
 		return (NULL);
 	new[len] = '\0';
-	while (i != len)
+	while (len--)
 	{
-		new[i] = s[start + i];
-		i++;
+		new[len] = s[start + len];
 	}
 	return (new);
 }

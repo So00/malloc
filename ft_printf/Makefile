@@ -6,15 +6,13 @@
 #    By: atourner <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/07 10:42:44 by atourner          #+#    #+#              #
-#    Updated: 2018/06/15 13:43:25 by pclement         ###   ########.fr        #
+#    Updated: 2018/02/26 16:08:15 by atourner         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 FLAGS = -Wall -Werror -Wextra
-
-H = includes/ft_printf.h includes/get_next_line.h includes/libft.h Makefile
 
 SRC_PATH = srcs/
 
@@ -114,19 +112,23 @@ COMP_NAME = $(SRC:.c=.o)
 
 all : $(NAME)
 
-%.o : %.c $(H)
+%.o : %.c
 	@gcc -o $@ -c $< -Iincludes
-	@printf "\033[0;31mCompilation of \033[0m\033[0;32m$<\033[0m            \r"
 
 $(NAME) : $(COMP_NAME)
+	@echo "\033[0;35mError detected in library\033[0m"
+	@sleep 2
+	@echo "\033[0;33mFixed\033[0m"
 	@ar rc $(NAME) $(COMP_NAME)
 	@ranlib $(NAME)
-	@echo "\n\033[0;35mCompilation de la librairie finie\033[0m"
+	@echo "\033[0;35mCompilation de la librairie finie\033[0m"
 
 clean :
+	@echo "\033[0;31mPiou piou partially erased zone\033[0m"
 	@rm -f $(COMP_NAME)
 
 fclean : clean
+	@echo "\033[0;31mPiou piou sector clear\033[0m"
 	@rm -f $(NAME)
 
 re : recompil fclean all

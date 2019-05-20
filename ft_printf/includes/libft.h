@@ -6,7 +6,7 @@
 /*   By: atourner <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 11:20:26 by atourner          #+#    #+#             */
-/*   Updated: 2018/06/15 12:24:16 by atourner         ###   ########.fr       */
+/*   Updated: 2018/02/27 13:36:46 by atourner         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void			ft_putendl_fd(char const *s, int fd);
 void			ft_putchar_fd(char c, int fd);
 
 void			ft_putstr_fd(char const *s, int fd);
-void			ft_putnstr_fd(char const *s, int fd, int nb);
 void			ft_strclr(char *s);
 void			ft_memdel(void **ap);
 void			ft_strdel(char **as);
